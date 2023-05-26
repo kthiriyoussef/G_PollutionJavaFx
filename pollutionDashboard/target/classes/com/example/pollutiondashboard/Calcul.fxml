@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pollutiondashboard.CalculController">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <BorderPane prefHeight="800.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <top>
+                  <AnchorPane prefHeight="70.0" prefWidth="1000.0" style="-fx-background-color: #3CCF4E;" BorderPane.alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="340.0" layoutY="27.0" prefHeight="18.0" prefWidth="323.0" text="POLLUTION TRACKER" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="20.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </top>
+               <left>
+                  <AnchorPane prefHeight="730.0" prefWidth="167.0" style="-fx-background-color: #3CCF4E;" BorderPane.alignment="CENTER">
+                     <children>
+                        <ImageView fitHeight="83.0" fitWidth="132.0" layoutY="-71.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/images-removebg-preview.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="45.0" layoutY="51.0" prefHeight="18.0" prefWidth="91.0" text="Calcul" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="54.0" layoutY="74.0" text="Emission" textFill="WHITE">
+                           <font>
+                              <Font name="Arial" size="18.0" />
+                           </font>
+                        </Label>
+                        <ImageView fitHeight="103.0" fitWidth="137.0" layoutX="39.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/calcul.png" />
+                           </image>
+                        </ImageView>
+                        <Line endX="60.80000305175781" layoutX="80.0" layoutY="232.0" startX="-48.0000114440918" />
+                        <Button fx:id="HOME" layoutX="31.0" layoutY="264.0" mnemonicParsing="false" onAction="#HOME" prefHeight="26.0" prefWidth="118.0" text="Home" />
+                        <Button fx:id="AddData" layoutX="29.0" layoutY="309.0" mnemonicParsing="false" onAction="#AddData" prefHeight="26.0" prefWidth="118.0" text="Ajouter Data" />
+                        <Button fx:id="consultData" layoutX="30.0" layoutY="352.0" mnemonicParsing="false" onAction="#consultData" prefHeight="26.0" prefWidth="118.0" text="Consulter Data" />
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="45.0" layoutY="268.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/dash.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="31.0" layoutY="313.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/add.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="18.0" fitWidth="18.0" layoutX="31.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../../../../img/consult.jpg" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+               </left>
+               <center>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #A8E890;" BorderPane.alignment="CENTER">
+                     <children>
+                        <TableView fx:id="tableSource" layoutX="96.0" layoutY="78.0" prefHeight="200.0" prefWidth="504.0">
+                          <columns>
+                              <TableColumn fx:id="idSouCol" prefWidth="75.0" text="idSource" />
+                            <TableColumn fx:id="sourceEmissionCol" prefWidth="112.79993438720703" text="Source d'emission" />
+                            <TableColumn fx:id="TypeSourceCol" prefWidth="101.5999755859375" text="Type de source" />
+                              <TableColumn fx:id="limiteRegCol" prefWidth="136.79998779296875" text="Limite Reglementaire" />
+                              <TableColumn fx:id="ActiviteCol" prefWidth="75.0" text="Activitee" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="40.0" layoutY="40.0" text="Select Source:" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="9.0" layoutY="356.0" prefHeight="18.0" prefWidth="99.0" text="Nb Heures Active" />
+                        <TextField fx:id="NBHRS" layoutX="119.0" layoutY="352.0" />
+                        <Label layoutX="341.0" layoutY="356.0" text="Facteur d'emission" />
+                        <TextField fx:id="FactEmi" layoutX="496.0" layoutY="353.0" prefHeight="26.0" prefWidth="184.0" />
+                        <Label layoutX="341.0" layoutY="370.0" prefHeight="18.0" prefWidth="146.0" text="( la quantité de polluant émis par Source)">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                        </Label>
+                        <TableView fx:id="tableEmission" layoutX="31.0" layoutY="461.0" onSort="#initialize" prefHeight="162.0" prefWidth="463.0">
+                          <columns>
+                            <TableColumn fx:id="SourceCol" prefWidth="123.20003318786621" text="Source" />
+                            <TableColumn fx:id="ETypeSourceCol" prefWidth="137.5999755859375" text="Type de Source" />
+                              <TableColumn fx:id="EmissionCol" prefWidth="201.60003662109375" text="Emission" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="Calculer" layoutX="561.0" layoutY="477.0" mnemonicParsing="false" onAction="#Calcul" prefHeight="26.0" prefWidth="127.0" text="Calculer" />
+                        <Button fx:id="Ajouter" layoutX="561.0" layoutY="515.0" mnemonicParsing="false" onAction="#Add" prefHeight="26.0" prefWidth="127.0" text="ajouter Resultat" />
+                        <Label layoutX="31.0" layoutY="410.0" text="Resultat" />
+                        <TextField fx:id="Resultat" layoutX="119.0" layoutY="406.0" />
+                        <Button fx:id="Supprimer" layoutX="563.0" layoutY="556.0" mnemonicParsing="false" onAction="#delete" prefHeight="26.0" prefWidth="126.0" text="Supprimer Resultat" />
+                     </children>
+                  </AnchorPane>
+               </center>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>
